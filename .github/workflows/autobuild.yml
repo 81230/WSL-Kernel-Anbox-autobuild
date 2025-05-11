@@ -33,10 +33,10 @@ jobs:
         run: sudo apt update && sudo apt install build-essential flex bison libssl-dev libelf-dev dwarves -y
       
       - name: Enable drivers for anbox
-        run:  cp Microsoft/config-wsl .config && cat overlay/config-append >> .config
+        run:  rm .config && cp overlay/build-config .config
       
       - name: Build linux kernel
-        run: make -j $(nproc)
+        run: make -j4
       
       - name: Get date
         run: echo "date=$(date +'%m/%d_%Y_%H/%M')" >> $GITHUB_ENV
