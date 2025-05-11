@@ -24,7 +24,7 @@ jobs:
         run: git clone https://github.com/microsoft/WSL2-Linux-Kernel .
         
       - name: Checkout
-        uses: actions/checkout@v3.0.1
+        uses: actions/checkout@v4
         with:
           path: overlay
         
